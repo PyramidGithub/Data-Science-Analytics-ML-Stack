@@ -1,6 +1,6 @@
 ---
 title: Visual Studio Code - Open Source ("Code - OSS") - Lynx
-intro: DSS,Analytics, & ML  Stack.
+intro: Data Architecture -  DSs, Analytics, & ML Stack
 versions:
   fpt: '*'
   ghes: '*'
@@ -8,7 +8,7 @@ versions:
 shortTitle: DSS Stack
 ---
 Visual Studio Code - Open Source ("Code - OSS")
-# **Run Visual Studio Code - Open Source ("Code - OSS") on any machine anywhere and access it in the browser**
+# Run Visual Studio Code Server- Open Source ("Code - OSS") on any machine anywhere and access it in the browser, choice ofd two different architectures 
 
 Reference the Websites
 [Code-Server] https://github.com/coder/code-server)
@@ -22,8 +22,11 @@ Use cloud servers to speed up tests, compilations, downloads, and more
 Preserve battery life when you're on the go; all intensive tasks run on your servers 
 
 
+## Stand Alone Server
 
-![image](https://github.com/user-attachments/assets/c26a75a8-200a-413e-91a4-a1d7bb880516)
+Login in Screenshot 
+
+![image](https://github.com/user-attachments/assets/8faf75fb-bcbb-434d-ac74-6e7fc6f034b7)
 
 
 ```markdown
@@ -52,6 +55,7 @@ Or, if you don't want/need a background service you can run:
 Deploy code-server for your team with Coder: https://github.com/coder/coder
 admins@studio-svr:~$  sudo systemctl enable --now code-server@$USER
 Created symlink /etc/systemd/system/default.target.wants/code-server@admins.service → /lib/systemd/system/code-server@.service.
+
 # Change ip address & password
 admins@studio-svr:~$  sudo nano /home/admins/.config/code-server/config.yaml 
 admins@studio-svr:~$  sudo systemctl restart code-server@$USER
@@ -59,13 +63,40 @@ admins@studio-svr:~$  sudo systemctl restart code-server@$USER
 
 ```
 
+Code Server Screen Screenshot  
 
 
+![image](https://github.com/user-attachments/assets/c26a75a8-200a-413e-91a4-a1d7bb880516)
 
 
+### Add to you ~/.bashrc , ~./zshrc or other bash like startup script
 
+1:Listen on port 80 --> export CODER_HTTP_ADDRESS=0.0.0.0:80 
 
+2:Enable TLS and listen on port 443 --> export CODER_TLS_ENABLE=true : export CODER_TLS_ADDRESS=0.0.0.0:443
 
+3:Redirect from HTTP to HTTPS --> export CODER_REDIRECT_TO_ACCESS_URL=true
+
+### Start the Coder server
+coder server
+
+# GitHub Example - Uasing (CODER_EXTERNAL_AUTH_0_ID="primary-github") makes a GitHub authentication token available at data.coder_external_auth.github.access_token
+
+data "coder_external_auth" "<github|gitlab|azure-devops|bitbucket-cloud|bitbucket-server|other>" {
+    id = "<USER_DEFINED_ID>"
+}
+
+```
+data "coder_external_auth" "github" {
+   id = "PyramidGithub"
+}
+# or 
+data "coder_external_auth" "github" { id = "PyramidGithub" }
+```
+
+## Build Infrustructure to Serve Code Server Teams, Labs & Organizations
+
+Create a Code Server site with Terraform, Kubernetes or  other options
 
 ```markdown
 
@@ -120,7 +151,28 @@ Using tunnel in US East Pittsburgh with latency  50.903735ms .
 ╚═══════════════════════════════════════════════╝
 ```
 
+Create the TLS secret in your Kubernetes cluster
+
+kubectl create secret tls coder-tls -n <coder-namespace> --key="tls.key" --cert="tls.crt"
 
 
 
-```markdown
+```markdown 
+coder:
+  tls:
+      secretName:
+      - coder-tls
+
+  # Alternatively, if you use an Ingress controller to terminate TLS,
+  # set the following values:
+  ingress:
+      enable: true
+      secretName: coder-tls
+      wildcardSecretName: coder-tls
+```
+
+$ coder server postgres-builtin-url
+psql "postgres://coder@localhost:49627/coder?sslmode=disable&password=feU...yI1"
+
+
+
