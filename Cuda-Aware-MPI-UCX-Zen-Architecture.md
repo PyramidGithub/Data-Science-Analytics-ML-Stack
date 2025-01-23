@@ -1,4 +1,9 @@
-
+---
+display_name: Kubernetes (Deployment)
+description: Provision Kubernetes Deployments as Coder workspaces
+tags: [ZEN,AOCL,CUDA,OMPI,UCX]
+---
+## AMD HPC 
 ### AMD Zen Software Studio - https://www.amd.com/en/developer/zen-software-studio.html
 
 #### The AOCC compiler is designed for high-performance x86 CPU compilation of C, C++, and Fortran programming languages FOR THE AMD Optimizing CPU Libraries (AOCL)
@@ -9,6 +14,7 @@ AMD Ryzen™, and AMD Ryzen™ Threadripper™ processors. The tuned implementat
 
 ###### Libraries
 
+> [!NOTE]
 1. AOCL-Data Analytics (New!): The AOCL-Data Analytics Library (AOCL-DA) provides optimized building blocks for data analysis and classical machine learning. APIs are available in C, C++, and Python. There is also a patch to enable scikit-learn users to benefit from the performance of AOCL-DA with minimal code changes.
 2. AOCL-BLAS: AOCL-BLAS is developed as a forked version of BLIS (https://github.com/flame/blis), which is developed by members of the Science of High-Performance Computing (SHPC) group in the Institute for Computational Engineering and Sciences at The University of Texas at Austin and other collaborators (including AMD). 
 All known features and functionalities of BLIS are retained and supported in the AOCL-BLAS library, 
