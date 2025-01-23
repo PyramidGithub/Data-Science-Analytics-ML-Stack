@@ -12,9 +12,10 @@ especially in the field of high-performance computing (HPC). The AOCC compiler e
 AMD Optimizing CPU Libraries (AOCL) -AOCL is a set of numerical libraries optimized for AMD processors based on the AMD “Zen” core architecture and generations. Supported processor families are AMD EPYC™, 
 AMD Ryzen™, and AMD Ryzen™ Threadripper™ processors. The tuned implementations of industry-standard math libraries enable rapid development of scientific and high-performance computing applications.
 
-###### Libraries
 
-> [!NOTE]
+
+> [!NOTE] Optimizing CPU Libraries (AOCL)
+
 ####### 1. AOCL-Data Analytics (New!): The AOCL-Data Analytics Library (AOCL-DA) provides optimized building blocks for data analysis and classical machine learning. APIs are available in C, C++, and Python. There is also a patch to enable scikit-learn users to benefit from the performance of AOCL-DA with minimal code changes.
 ####### 2. AOCL-BLAS: AOCL-BLAS is developed as a forked version of BLIS (https://github.com/flame/blis), which is developed by members of the Science of High-Performance Computing (SHPC) group in the Institute for Computational Engineering and Sciences at The University of Texas at Austin and other collaborators (including AMD). 
 All known features and functionalities of BLIS are retained and supported in the AOCL-BLAS library, 
@@ -33,7 +34,7 @@ Applications relying on standard Netlib LAPACK interfaces can utilize AOCL-LAPAC
 #######  13. AOCL-Utils: AOCL-Utils is designed for integration with the other AOCL libraries. Each project has its own mechanism to identify CPU and provide necessary features such as Dynamic Dispatch. The main purpose of this library is to provide a centralized mechanism to update/validate and provide information.
 
 
-###### AOCCL COMPILERS & AMD Optimizing CPU Libraries (AOCL)
+###### Build, Compile, & Install AOCL COMPILERS & AMD Optimizing CPU Libraries:(AOCL)
 
 
 ```markdown 
