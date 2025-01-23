@@ -1,5 +1,5 @@
 ---
-display_name:AMD HPC for Zen Architecture 
+display_name: AMD HPC for Zen Architecture 
 description: Cuda-Aware-OMPI-UCX-->AMD-Optimizing-CPU-Libraries
 tags: [ZEN,AOCL,CUDA,OMPI,UCX]
 ---
