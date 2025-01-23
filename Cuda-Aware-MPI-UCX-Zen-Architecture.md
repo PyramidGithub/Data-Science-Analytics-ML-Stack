@@ -1624,6 +1624,7 @@ make[3]: Leaving directory '/home/admins/ucx-1.18.0/build/src/tools/perf/ze'
 ╭─ ~/ucx-1.18.0/build ──────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────── 2 ✘  with admins@studio-svr  at 03:58:10 ─╮
 ╰─ CC=gcc-13 CXX=g++-13 cmake                                                                                                                                                                                     ─╯                                                                                                                                                                        ─╯
 make: Nothing to be done for 'all'.
+### MakeInstall
 ╭─ ~/ucx-1.18.0/build/cmake ──────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────── ✔  with admins@studio-svr  at 03:59:00 ─╮
 ╰─ sudo make install                                                                                                                                                                                              ─╯
 [sudo] password for admins:
@@ -1635,16 +1636,13 @@ make[1]: Leaving directory '/home/admins/ucx-1.18.0/build/cmake'
 
 ```
 
-
-
-
-
 #### OMPI - open source implementation of the Message Passing Interface (MPI) specification:
 ##### Is developed and maintained by a consortium of academic, research, and industry partners. Open MPI is therefore able to combine the expertise, technologies, 
 and resources from all across the High Performance Computing community in order to build the best MPI library available.
 
 ```
-─ cd ~/ompi/                                                                                                                                                                                                     ─╯
+─ cd ~/ompi/
+### Configure                                                                                                                                                                                                     ─╯
 ╭─ ~/ompi  on main ?1 ───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────── ✔  with admins@studio-svr  at 05:31:34 ─╮
 ╰─ ./configure --prefix=/usr/bin/local --with-cuda=/usr/local/cuda12.4 --with-gdrcopy=/usr CC=gcc-13' 'CXX=g++-13                                                                                                 ─╯
 configure: WARNING: unrecognized options: --with-gdrcopy
@@ -11091,7 +11089,7 @@ DDN Infinite Memory Engine: no
 Generic Unix FS: yes
 IBM Spectrum Scale/GPFS: no (not found)
 Lustre: no (not found)
-
+### Make
 ╭─ ~/ompi  on main ?1 ─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────── ✔  took 5m 58s  with admins@studio-svr  at 05:52:02 ─╮
 ╰─ make                                                                                                                                                                                                           ─╯
 Making all in config
@@ -17502,6 +17500,7 @@ make[1]: Leaving directory '/home/admins/ompi/docs'
 make[1]: Entering directory '/home/admins/ompi'
 make[1]: Nothing to be done for 'all-am'.
 make[1]: Leaving directory '/home/admins/ompi'
+### Make Install
 ╭─ ~/ompi  on main ?1 ────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────── ✔  took 35m 48s  with admins@studio-svr  at 07:38:10 ─╮
 ╰─ sudo make install                                                                                                                                                                                              ─╯
 [sudo] password for admins:
