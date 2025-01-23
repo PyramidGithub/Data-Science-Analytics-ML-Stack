@@ -1,6 +1,6 @@
 ---
-display_name: Kubernetes (Deployment)
-description: Provision Kubernetes Deployments as Coder workspaces
+display_name:AMD HPC for Zen Architecture 
+description: Cuda Aware OMPI, ucx, AMD Optimizing CPU Libraries
 tags: [ZEN,AOCL,CUDA,OMPI,UCX]
 ---
 ## AMD HPC 
@@ -11,8 +11,6 @@ tags: [ZEN,AOCL,CUDA,OMPI,UCX]
 especially in the field of high-performance computing (HPC). The AOCC compiler environment streamlines and speeds up the development and tuning process for x86 applications written in C, C++, and Fortran.
 AMD Optimizing CPU Libraries (AOCL) -AOCL is a set of numerical libraries optimized for AMD processors based on the AMD “Zen” core architecture and generations. Supported processor families are AMD EPYC™, 
 AMD Ryzen™, and AMD Ryzen™ Threadripper™ processors. The tuned implementations of industry-standard math libraries enable rapid development of scientific and high-performance computing applications.
-
-
 
 > [!NOTE] Optimizing CPU Libraries (AOCL)
 
