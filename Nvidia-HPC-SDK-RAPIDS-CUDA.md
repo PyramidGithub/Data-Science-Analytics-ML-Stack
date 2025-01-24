@@ -7,6 +7,7 @@
 4. https://developer.nvidia.com/hpc-sdk
 5. https://developer.nvidia.com/cuda-toolkit
 6. https://developer.nvidia.com/blog/rapids-24-12-introduces-cudf-on-pypi-cuda-unified-memory-for-polars-and-faster-gnns/
+7. https://developer.download.nvidia.com/compute/cuda/repos/ubuntu2404/x86_64/
 
 ```
 wget https://developer.download.nvidia.com/compute/cuda/repos/ubuntu2404/x86_64/cuda-ubuntu2404.pin
