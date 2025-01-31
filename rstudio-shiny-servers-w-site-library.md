@@ -4106,26 +4106,159 @@ Scanning linux images...
 
 ```{r setup, include=FALSE}
 
+```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
 
-librarian::shelf( fs, fst, qs, clock, vroom, excelR, devtools, remotes, pacman, renv, rstudioapi,            # I/O & utilities
+install.packages("librarian")
 
-  data.table, dplyr, dbplyr, fastverse, tidyverse, tidyCpp, arrow,                                         # DATA PROCESSING
+librarian::lib_startup(librarian, lib = "/home/admins/R/x86_64-pc-linux-gnu-library/4.3", global = TRUE)
 
-  odbc, duckdb, DBI, Rpostgres, Rpostgresql, rpostgis, DatabaseConnector, sparklyr, sparklyr.nested,         # Database
+librarian::shelf(
+  fs, fst, qs, clock, vroom, excelR, devtools, remotes, pacman, renv, rstudioapi,                         # I/O & utilities
 
-  stringi, stringfast, stringdist, quanteda, udpipe, text2vec,                                               # Strings\Text\NLP
+  data.table, dplyr, dbplyr, fastverse, tidyverse, tidyCpp, arrow,                                        # DATA PROCESSING
 
-  furr, parrallelDist, fastmatrix, rrapply, mirai, kit, opnblas,                                             # Parallel
+  odbc, duckdb, DBI, Rpostgres, Rpostgresql, rpostgis, DatabaseConnector, sparklyr, sparklyr.nested,      # Database
 
-  S1, S2, geos, ccpRouting, dodgr,                                                                           # Spacial 
+  stringi, stringfast, stringdist, quanteda, udpipe, text2vec,                                            # Strings\Text\NLP
+
+  furr, parrallelDist, fastmatrix, rrapply, mirai, kit, opnblas, parallelly, futureverse, parallelMap,    # Parallel
+
+  S1, S2, geos, ccpRouting, dodgr,                                                                        # Spacial
+
+  igraph, lattice, ggplot2, ggtheme, ggraph, plotly, grid, scales, dygraph,                               # Graph
+
+  rpolars, tidypolars, rextendr, rust, reticulate, julia, juliacall, rJava, rmarkdown, knittr,            # LANGUAGES
+
+  mlr3, caret, CaretEnsemble, torch, torchvision, torchviasionlib, torchaudio, tensorflow, keras,         # ML
+
+  shiny, shinyreact, shinyanimate, magick )                                                               # Shiny, APPS, IMAGE
+                                                                                                      # Themes install the pseudo-package from this Github repository
+devtools::install_github("max-alletsee/rstudio-themes")
+library(rstudiothemes)
+install_rstudio_themes(theme = "all_dark")
+
+librarian::lib_startup(librarian, lib = "/home/admins/R/x86_64-pc-linux-gnu-library/4.3", global = TRUE)
+
+```
+
+```
+> # install.packages("pak")
+> pak::pak("apache/arrow-adbc/r/adbcdrivermanager")
+! Using bundled GitHub PAT. Please add your own PAT using `gitcreds::gitcreds_set()`.
+✔ Updated metadata database: 3.09 MB in 8 files.                                  
+✔ Updating metadata database ... done                                     
+                                                                           
+→ Will install 1 package.
+→ Will update 1 package.
+→ Will download 1 CRAN package (427.31 kB).
+→ Will download 1 package with unknown size.
++ adbcdrivermanager 0.16.0 → 0.16.0.9000 [bld][cmp][dl] (GitHub: 3034496)
++ nanoarrow                  0.6.0       [bld][cmp][dl] (427.31 kB)
   
-  igraph, lattice, ggplot2, ggtheme, ggraph, plotly, grid, scales, dygraph,                                  # Graph
-  
-  rpolars, tidypolars, rextendr, reticulate, julia, juliacall, rmarkdown, rJava,                             # LANGUAGES
-  
-  mlr3, caret, CaretEnsemble, torch, torchvision, torchviasionlib, torchaudio, tensorflow, keras,            # ML
-  
-  shiny, shinyreact, shinyanimate, magick )                                                                  # Shiny, APPS, IMAGE
+? Do you want to continue (Y/n)  
+ℹ Getting 1 pkg (427.31 kB) and 1 pkg with unknown size
+✔ Got nanoarrow 0.6.0 (source) (427.31 kB)                                        
+✔ Got adbcdrivermanager 0.16.0.9000 (source) (5.85 MB)               
+✔ Downloaded 2 packages (6.27 MB) in 2.5s                            
+ℹ Building nanoarrow 0.6.0
+✔ Built nanoarrow 0.6.0 (27.6s)                                  ow
+✔ Installed nanoarrow 0.6.0  (146ms)                               
+ℹ Packaging adbcdrivermanager 0.16.0.9000                          
+✔ Packaged adbcdrivermanager 0.16.0.9000 (2.2s)                          
+ℹ Building adbcdrivermanager 0.16.0.9000                                 
+✔ Built adbcdrivermanager 0.16.0.9000 (24.8s)                            er
+✔ Installed adbcdrivermanager 0.16.0.9000 (github::apache/arrow-adbc@3034496) (584ms)
+✔ 1 pkg + 1 dep: upd 1, added 1, dld 2 (NA B) [2m 8s]                      
+> gitcreds::gitcreds_set()
 
+### ARROW
+? Enter password or token: ghp-#################################
+-> Adding new credentials...
+-> Removing credentials from cache...
+-> Done.
+> pak::pak("apache/arrow-adbc/r/adbcpostgresql") 
+                                                                               
+→ Will update 1 package.
+→ The package (0 B) is cached.
++ adbcpostgresql 0.16.0 → 0.16.0.9000 [bld][cmp] (GitHub: 3034496)
+  
+? Do you want to continue (Y/n) Y
+ℹ No downloads are needed, 1 pkg is cached
+✔ Got adbcpostgresql 0.16.0.9000 (source) (5.85 MB)
+ℹ Packaging adbcpostgresql 0.16.0.9000
+✔ Packaged adbcpostgresql 0.16.0.9000 (2.7s)                          
+ℹ Building adbcpostgresql 0.16.0.9000                                 
+✔ Built adbcpostgresql 0.16.0.9000 (2m 2.3s)                          
+✔ Installed adbcpostgresql 0.16.0.9000 (github::apache/arrow-adbc@3034496) (1.3s)
+✔ 1 pkg + 2 deps: kept 2, upd 1, dld 1 (NA B) [2m 19.2s]                
+> pak::pak("apache/arrow-adbc/r/adbcsqlite")
+                                                                           
+→ Will install 1 package.
+→ The package (0 B) is cached.
++ adbcsqlite   0.16.0.9000 [bld][cmp] (GitHub: 3034496) + ✔ libsqlite3-dev
+✔ All system requirements are already installed.
+  
+ℹ No downloads are needed, 1 pkg is cached
+✔ Got adbcsqlite 0.16.0.9000 (source) (5.85 MB)
+ℹ Packaging adbcsqlite 0.16.0.9000
+✔ Packaged adbcsqlite 0.16.0.9000 (6s)                            
+ℹ Building adbcsqlite 0.16.0.9000                                 
+✔ Built adbcsqlite 0.16.0.9000 (48.1s)                            te
+✔ Installed adbcsqlite 0.16.0.9000 (github::apache/arrow-adbc@3034496) (203ms)
+✔ 1 pkg + 2 deps: kept 2, added 1, dld 1 (NA B) [59.6s]             
+```
+
+```❯ pip install adbc-driver-flightsql
+
+pip install adbc-driver-postgresql
+
+pip install adbc-driver-snowflake
+
+pip install adbc-driver-sqlite
+Defaulting to user installation because normal site-packages is not writeable
+Collecting adbc-driver-flightsql
+  Downloading adbc_driver_flightsql-1.4.0-py3-none-manylinux_2_5_x86_64.manylinux1_x86_64.manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (3.4 kB)
+Collecting adbc-driver-manager (from adbc-driver-flightsql)
+  Downloading adbc_driver_manager-1.4.0-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (3.2 kB)
+Collecting importlib-resources>=1.3 (from adbc-driver-flightsql)
+  Downloading importlib_resources-6.5.2-py3-none-any.whl.metadata (3.9 kB)
+Requirement already satisfied: typing-extensions in /home/admins/.local/lib/python3.12/site-packages (from adbc-driver-manager->adbc-driver-flightsql) (4.12.2)
+Downloading adbc_driver_flightsql-1.4.0-py3-none-manylinux_2_5_x86_64.manylinux1_x86_64.manylinux_2_17_x86_64.manylinux2014_x86_64.whl (6.5 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 6.5/6.5 MB 8.3 MB/s eta 0:00:00
+Downloading importlib_resources-6.5.2-py3-none-any.whl (37 kB)
+Downloading adbc_driver_manager-1.4.0-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (2.2 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 2.2/2.2 MB 10.3 MB/s eta 0:00:00
+Installing collected packages: importlib-resources, adbc-driver-manager, adbc-driver-flightsql
+Successfully installed adbc-driver-flightsql-1.4.0 adbc-driver-manager-1.4.0 importlib-resources-6.5.2
+Defaulting to user installation because normal site-packages is not writeable
+Collecting adbc-driver-postgresql
+  Downloading adbc_driver_postgresql-1.4.0-py3-none-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (4.0 kB)
+Requirement already satisfied: adbc-driver-manager in /home/admins/.local/lib/python3.12/site-packages (from adbc-driver-postgresql) (1.4.0)
+Requirement already satisfied: importlib-resources>=1.3 in /home/admins/.local/lib/python3.12/site-packages (from adbc-driver-postgresql) (6.5.2)
+Requirement already satisfied: typing-extensions in /home/admins/.local/lib/python3.12/site-packages (from adbc-driver-manager->adbc-driver-postgresql) (4.12.2)
+Downloading adbc_driver_postgresql-1.4.0-py3-none-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (2.8 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 2.8/2.8 MB 5.8 MB/s eta 0:00:00
+Installing collected packages: adbc-driver-postgresql
+Successfully installed adbc-driver-postgresql-1.4.0
+Defaulting to user installation because normal site-packages is not writeable
+Collecting adbc-driver-snowflake
+  Downloading adbc_driver_snowflake-1.4.0-py3-none-manylinux_2_5_x86_64.manylinux1_x86_64.manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (3.2 kB)
+Requirement already satisfied: adbc-driver-manager in /home/admins/.local/lib/python3.12/site-packages (from adbc-driver-snowflake) (1.4.0)
+Requirement already satisfied: importlib-resources>=1.3 in /home/admins/.local/lib/python3.12/site-packages (from adbc-driver-snowflake) (6.5.2)
+Requirement already satisfied: typing-extensions in /home/admins/.local/lib/python3.12/site-packages (from adbc-driver-manager->adbc-driver-snowflake) (4.12.2)
+Downloading adbc_driver_snowflake-1.4.0-py3-none-manylinux_2_5_x86_64.manylinux1_x86_64.manylinux_2_17_x86_64.manylinux2014_x86_64.whl (15.6 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 15.6/15.6 MB 4.9 MB/s eta 0:00:00
+Installing collected packages: adbc-driver-snowflake
+Successfully installed adbc-driver-snowflake-1.4.0
+Defaulting to user installation because normal site-packages is not writeable
+Collecting adbc-driver-sqlite
+  Downloading adbc_driver_sqlite-1.4.0-py3-none-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (3.4 kB)
+Requirement already satisfied: adbc-driver-manager in /home/admins/.local/lib/python3.12/site-packages (from adbc-driver-sqlite) (1.4.0)
+Requirement already satisfied: importlib-resources>=1.3 in /home/admins/.local/lib/python3.12/site-packages (from adbc-driver-sqlite) (6.5.2)
+Requirement already satisfied: typing-extensions in /home/admins/.local/lib/python3.12/site-packages (from adbc-driver-manager->adbc-driver-sqlite) (4.12.2)
+Downloading adbc_driver_sqlite-1.4.0-py3-none-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (976 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 976.4/976.4 kB 1.7 MB/s eta 0:00:00
+Installing collected packages: adbc-driver-sqlite
+Successfully installed adbc-driver-sqlite-1.4.0
 ```
