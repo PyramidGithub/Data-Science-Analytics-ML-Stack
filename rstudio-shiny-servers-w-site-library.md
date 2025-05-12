@@ -1,7 +1,14 @@
-![image](https://github.com/user-attachments/assets/0b7c2978-33be-4961-870b-9b8710d1acc2)
+
+# Set Up Rstudio & Shinmy Sertver Programming Env. for teams R, Python, Julia, SQL plus ability to support other languages with system interaction & GPU intertaction.
+
+
+![image](https://github.com/user-attachments/assets/d59575ad-78e2-4af1-b0e2-5e9c4b7a630b)
+
 
 https://posit.co/download/shiny-server/
 https://posit.co/download/rstudio-server/
+
+## Install R, Rstudio & Shiny Servers
 
 ```markdown
 
@@ -14,7 +21,10 @@ sudo gdebi shiny-server-1.5.22.1017-amd64.deb
 
 ```
 
+![image](https://github.com/user-attachments/assets/0b7c2978-33be-4961-870b-9b8710d1acc2)
 
+
+## Set Up Python
 ```markdown
  sudo apt install libpython3.10-dev                                                                                                                                                      ─╯
 [sudo] password for admins:
@@ -66,6 +76,7 @@ User sessions running outdated binaries:
  admins @ session #171: bash[1931811,3143103], sshd[799353,799484], su[2325077,3300605], zsh[799584,799637,799638,2325246,2325247,2325250,3300611,3300726,3300727,3300731]
  admins @ user manager service: systemd[127130]
 
+## R libraries 
 No VM guests are running outdated hypervisor (qemu) binaries on this host.
 ╭─ ~ ───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────── ✔  took 31s  with admins@studio-svr  at 03:06:32 ─╮
 ╰─ sudo apt-get install r-cran-openssl                                                                                                                                                     ─╯
@@ -4104,6 +4115,7 @@ Scanning linux images...
 
 ```
 
+## Install parallel, DB, DATA PROCESSING, io, ML, Shiny, Storage, Java, Julia, C++ Interfaces
 
 ```{r setup, include=FALSE}
 
@@ -4142,6 +4154,7 @@ install_rstudio_themes(theme = "all_dark")
 librarian::lib_startup(librarian, lib = "/home/admins/R/x86_64-pc-linux-gnu-library/4.3", global = TRUE)
 
 ```
+## Install Arrow
 
 ```
 > # install.packages("pak")
@@ -4209,7 +4222,7 @@ librarian::lib_startup(librarian, lib = "/home/admins/R/x86_64-pc-linux-gnu-libr
 ✔ Installed adbcsqlite 0.16.0.9000 (github::apache/arrow-adbc@3034496) (203ms)
 ✔ 1 pkg + 2 deps: kept 2, added 1, dld 1 (NA B) [59.6s]             
 ```
-
+## ADBC iNSTALL 
 ```❯ pip install adbc-driver-flightsql
 
 pip install adbc-driver-postgresql
