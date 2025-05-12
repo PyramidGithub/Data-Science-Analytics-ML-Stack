@@ -1,7 +1,7 @@
 # Data-Science-Analytics-ML-Stack
 Lynx Builds Ubuntu Server & Kubernetes for code server i.e. MS VS Code, Rstudio Server, Shiny Server, Middleware, Drivers, & HPC libraries FRON Nvidia & AMD for Data Science, Analytics, & ML with additional security patches for ssl.
 
-![image](https://github.com/user-attachments/assets/5733ce03-7ab8-4403-94de-ccd33ad034f7)
+![image](https://github.com/user-attachments/assets/f966d140-3d96-426d-90dd-3e0d92ef8343)
 
 ![image](https://github.com/user-attachments/assets/4b36be5b-be07-46d4-b239-de5f1282823d)
 
